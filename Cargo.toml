@@ -2,11 +2,11 @@
 default-members = ["bin/ream"]
 members = [
     "bin/ream",
-    "crates/common/consensus", 
-    "crates/common/execution_engine", 
+    "crates/common/consensus",
+    "crates/common/execution_engine",
     "crates/common/executor",
-    "crates/common/fork_choice", 
-    "crates/common/network_spec", 
+    "crates/common/fork_choice",
+    "crates/common/network_spec",
     "crates/common/node",
     "crates/common/polynomial_commitments",
     "crates/crypto/bls",
@@ -38,11 +38,11 @@ alloy-rlp = { version = "0.3.8", default-features = false, features = ["derive"]
 anyhow = "1.0"
 async-trait = "0.1.86"
 clap = "4"
-directories = { version = "6.0.0" } 
+directories = { version = "6.0.0" }
 discv5 = { version = "0.9.0", features = ["libp2p"] }
 enr = "0.13.0"
-#ethereum_hashing = { git = "https://github.com/ReamLabs/ethereum_hashing.git" }
-ethereum_hashing = { git = "https://github.com/SuccinctPaul/ethereum_hashing", branch = "feat/add_poseidon_hash" }
+ethereum_hashing = { git = "https://github.com/ReamLabs/ethereum_hashing.git" }
+#ethereum_hashing = { git = "https://github.com/SuccinctPaul/ethereum_hashing", branch = "feat/add_poseidon_hash", default-features = false, features = ["zero_hash_cache", "poseidon2"] }
 ethereum_serde_utils = "0.7"
 ethereum_ssz = "0.8"
 ethereum_ssz_derive = "0.8"
@@ -85,5 +85,5 @@ ream-p2p = { path = "crates/networking/p2p" }
 ream-rpc = { path = "crates/rpc" }
 ream-storage = { path = "crates/storage" }
 
-[patch.crates-io]
-ethereum_hashing = { git = "https://github.com/SuccinctPaul/ethereum_hashing", branch = "feat/add_poseidon_hash" }
+[patch."https://github.com/ReamLabs/ethereum_hashing.git"]
+ethereum_hashing = { git = "https://github.com/SuccinctPaul/ethereum_hashing", branch = "feat/add_poseidon_hash", default-features = false, features = ["poseidon2", "zero_hash_cache"] }
