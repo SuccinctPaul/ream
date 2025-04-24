@@ -1709,9 +1709,8 @@ dependencies = [
 [[package]]
 name = "ethereum_hashing"
 version = "0.7.0"
-source = "git+https://github.com/SuccinctPaul/ethereum_hashing?branch=feat%2Fadd_poseidon_hash#c6b5d0e9d7e4c49200bf6cce0faec70f68a8a2ba"
+source = "git+https://github.com/SuccinctPaul/ethereum_hashing?rev=692ad3d#692ad3d86a90bb8697601cea8d20a5b6766f6290"
 dependencies = [
- "sha2 0.10.8",
  "zkhash",
 ]
 
